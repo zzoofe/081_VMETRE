@@ -1,0 +1,27 @@
+section.b-mainSearch
+	.container
+		h1 Найди специалиста #вметре от себя
+		form(action="#")
+			.b-mainSearch__options
+				.b-mainSearch__option
+					.b-mainSearch__select
+						span Услуга
+						+svg('sel')
+				.b-mainSearch__option
+					.b-mainSearch__select
+						span Услуга
+						+svg('sel')
+				.b-mainSearch__option
+					.b-mainSearch__select
+						span Услуга
+						+svg('sel')
+				.b-mainSearch__option
+					input(
+						type="text"
+						placeholder="Введите текст для поиска услуги"
+					).b-mainSearch__input
+			.b-mainSearch__btn
+				button.btn.btn_black
+					| На карте
+					+svg('map')
+				button.btn.btn_red Искать

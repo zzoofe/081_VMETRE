@@ -1,0 +1,16 @@
+section.b-services
+	.container
+		.b-title
+			h2 Популярные услуги
+			a(href="#") Смотреть все
+		.b-services__list
+			each item, key in data.services
+				.b-services__item
+					a(href="#").b-services__item__link
+						span.b-services__item__title: != item.name
+						span.b-services__item__info: != item.desc
+						span.b-services__item__image
+							+lazyPicture({
+								src: item.image,
+								alt: ''
+							})
