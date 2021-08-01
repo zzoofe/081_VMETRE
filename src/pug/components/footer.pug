@@ -1,1 +1,103 @@
 footer.footer
+	.footer__row
+		.container
+			.footer__col-1
+				.footer__logo
+					a(href="#")
+						img(src="/images/flogo.png" alt="")
+				.footer__app
+					a(href="#"): +svg('app-store').store
+					a(href="#"): +svg('google-play').play
+			.footer__col-2
+				.footer__title
+					span Специалисты в городах
+					a(href="#") Смотреть все
+				.footer__nav
+					ul.footer__list
+						li: a(href="#") Москва
+						li: a(href="#") Санкт-Петербург
+						li: a(href="#") Новосибирск
+						li: a(href="#") Екатеринбург
+						li: a(href="#") Челябинск
+					ul.footer__list
+						li: a(href="#") Нижний Новгород
+						li: a(href="#") Казань
+						li: a(href="#") Самара
+						li: a(href="#") Омск
+						li: a(href="#") Красноярск
+					ul.footer__list
+						li: a(href="#") Ростов-на-Дону
+						li: a(href="#") Уфа
+						li: a(href="#") Волгоград
+						li: a(href="#") Пермь
+						li: a(href="#") Барнаул
+					ul.footer__list
+						li: a(href="#") Воронеж
+						li: a(href="#") Саратов
+						li: a(href="#") Краснодар
+						li: a(href="#") Тольятти
+						li: a(href="#") Ижевск
+			.footer__col-2
+				.footer__title
+					span Специалисты в районах Москвы
+					a(href="#") Смотреть все
+				.footer__nav.is-large
+					ul.footer__list
+						li: a(href="#") Академический
+						li: a(href="#") Алексеевский
+						li: a(href="#") Алтуфьевский
+						li: a(href="#") Арбат
+						li: a(href="#") Аэропорт
+					ul.footer__list
+						li: a(href="#") Бабушкинский
+						li: a(href="#") Басманный
+						li: a(href="#") Беговой
+						li: a(href="#") Бескудниковский
+						li: a(href="#") Бибирево
+					ul.footer__list
+						li: a(href="#") Бирюлёво Восточное
+						li: a(href="#") Бирюлёво Западное
+						li: a(href="#") Богородское
+						li: a(href="#") Братеево
+						li: a(href="#") Бутырский
+					ul.footer__list
+						li: a(href="#") Вешняки
+						li: a(href="#") Внуково
+						li: a(href="#") Войковский
+						li: a(href="#") Восточное Дегунино
+						li: a(href="#") Восточное Измайлово
+			.footer__col-3
+				.footer__nav
+					ul.footer__list
+						li: a(href="#") Проекты
+						li: a(href="#") Специалисты
+						li: a(href="#") Карта
+					ul.footer__list
+						li: a(href="#") Личный кабинет
+						li: a(href="#") Вопросы и ответы
+						li: a(href="#") Москва
+				.footer__subscribe
+					.footer__subscribe__frame
+						p Подпишитесь на рассылку, чтобы получать информацию по своему проекту
+						form(action="#")
+							input(type="text" placeholder="Введите e-mail").footer__subscribe__inp
+							button.footer__subscribe__btn
+								+svg('arw')
+			.footer__col-4
+				.footer__about
+					h4 О проекте
+					p Проект ВМетре позволяет пользователям найти ближайшего исполнителя на необходимые услуги. Поиск происходит преимущественно по карте, на которой сразу же можно увидеть фото, цену и рейтинг исполнителя. Для удобства исполнители могут быть добавлены в закладки. Для надежности использования сервиса пользователи могут работать через внутреннюю Сделку без риска, в рамках которой сервис выступает гарантом.
+				.footer__token
+					h4 Токен VM
+					.footer__token__frame
+						ul
+							li
+								span VM
+								span USDT
+							li 250 / 1000
+	.footer__row
+		.container
+			.footer__copyr
+				span Все права защищены.
+				span (C) 2021 VMETRE
+			.footer__age 16+

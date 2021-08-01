@@ -1,2 +1,6 @@
 // stylelint-disable no-empty-source
 // @include font-face("../fonts/FontName/FontName", "FontName", 400, normal);
+
+@include font-face("../fonts/GothamPro/GothamPro", "Gotham Pro", 400, normal);
+@include font-face("../fonts/GothamPro/GothamPro-Medium", "Gotham Pro", 500, normal);
+@include font-face("../fonts/GothamPro/GothamPro-Bold", "Gotham Pro", 700, normal);

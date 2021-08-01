@@ -1,0 +1,24 @@
+section.b-section.b-specialists
+	.container
+		.b-title
+			h2 Лучшие специалисты
+			a(href="#").b-title__all Смотреть все
+		.b-specialists__frame
+			each item, key in data.specialists
+				.b-specialists__item
+					a(href="#").b-specialists__item__link
+						span.b-specialists__item__spec: != item.spec
+						span.b-specialists__item__image
+							+lazyPicture({
+								src: item.image,
+								alt: ''
+							})
+						span.b-specialists__item__info
+							span.b-specialists__item__reit
+								+svg('star')
+								!= item.reit
+							span.b-specialists__item__price: != item.price
+						span.b-specialists__item__name: != item.name
+						span.b-specialists__item__sity
+							!= item.sity
+							+svg('map')

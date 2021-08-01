@@ -1,13 +1,24 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
 // COLORS
-$color-black: #000;
+
+$color-black: #313131;
+$color-black0: #000;
+$color-black1: #20161F;
 $color-white: #fff;
-$color-gray: #eee;
+$color-white1: #E5E5E5;
+$color-gray: #777777;
+$color-gray1: #85A5AD;
+$color-gray1-hover: #709ca7;
+$color-gray2: #C4C4C4;
+$color-gray3: #F8F8F8;
+$color-red: #FF5400;
+$color-red-hover: #eb5105;
 
 // FONTS
 // stylelint-disable-next-line
 $font-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-default: "Gotham Pro";
 
 // EASING TRANSITIONS
 $duration-normal: 0.4s;

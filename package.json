@@ -69,15 +69,16 @@
 	"dependencies": {
 		"@babel/polyfill": "7.10.4",
 		"body-scroll-lock": "3.1.5",
-		"jquery": "3.6.0",
 		"husky": "6.0.0",
+		"jquery": "3.6.0",
 		"lozad": "1.16.0",
 		"ninelines-sharing": "1.5.6",
 		"ninelines-ua-parser": "1.1.6",
 		"normalize.css": "8.0.1",
 		"object-fit-images": "3.2.4",
 		"object-fit-videos": "1.0.4",
-		"svg4everybody": "2.1.9"
+		"svg4everybody": "2.1.9",
+		"swiper": "6.8.0"
 	},
 	"husky": {
 		"hooks": {

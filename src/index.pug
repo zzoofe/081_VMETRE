@@ -1,10 +1,12 @@
 extends pug/base
 
 prepend vars
-	//-
+	- title = 'Vmetre'
+	- description = ''
+	- image = ''
 
 append vars
-	//-
+	- link.icon32x32 = './images/favicon.png'
 
 block content
 	//include pug/data
