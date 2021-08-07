@@ -19,10 +19,17 @@
 			justify-content: space-between;
 			align-items: center;
 			padding: 27px 0 13px 0;
+
+			@include mobile-s {
+				padding-top: 20px;
+				flex-direction: column;
+			}
 		}
 
 		&-2 {
-
+			@include mobile {
+				display: none;
+			}
 		}
 
 		&-3 {
@@ -30,8 +37,27 @@
 			display: grid;
 			grid-template-columns: 55% 1fr;
 
+			@include laptop {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@include mobile {
+				grid-template-columns: 1fr;
+				padding-top: 20px;
+			}
+
 			.footer__nav {
 				grid-template-columns: 46% 1fr;
+
+				@include laptop {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				@include mobile-s {
+					grid-template-columns: 1fr;
+					border: 0;
+					text-align: center;
+				}
 			}
 		}
 
@@ -41,6 +67,18 @@
 			display: grid;
 			grid-template-columns: 1fr auto;
 			grid-column-gap: 87px;
+
+			@include laptop {
+				grid-column-gap: 50px;
+			}
+
+			@include mobile {
+				grid-template-columns: 1fr;
+			}
+
+			@include mobile-s {
+				display: none;
+			}
 
 			h4 {
 				margin: 0 0 26px 0;
@@ -53,7 +91,9 @@
 	}
 
 	&__logo {
-
+		@include mobile-s {
+			padding-bottom: 20px;
+		}
 	}
 
 	&__app {
@@ -66,9 +106,17 @@
 
 			svg {
 				height: 40px;
+				fill: #ffffff;
+				transition: $duration-normal;
+
+				&:hover {
+					fill: #C4C4C4;
+				}
+
 				&.play {
 					width: 135px;
 				}
+
 				&.store {
 					width: 120px;
 				}
@@ -109,10 +157,15 @@
 		grid-template-columns: 26% 26% 1fr 20%;
 		grid-column-gap: 20px;
 		padding-bottom: 32px;
-		border-bottom: 1px solid $color-white1;
+		border-bottom: 1px solid rgba(71, 71, 71, 1);
 		font-weight: 500;
 		font-size: 16px;
 		line-height: 1;
+
+		@include laptop {
+			grid-template-columns: 1fr 1fr;
+			grid-row-gap: 19px;
+		}
 
 		&.is-large {
 			font-size: 18px;
@@ -151,6 +204,10 @@
 		display: flex;
 		justify-content: flex-end;
 
+		@include mobile {
+			display: none;
+		}
+
 		&__frame {
 			width: 320px;
 		}
@@ -173,11 +230,11 @@
 			border-radius: 24px;
 			background: none;
 			height: 44px;
-			padding: 0 50px 0 30px;
+			padding: 10px 50px 10px 30px;
 			color: $color-gray3;
 			font-weight: 400;
 			font-size: 14px;
-			line-height: 1;
+			line-height: 24px;
 			width: 100%;
 			outline: none;
 
@@ -216,6 +273,10 @@
 
 	&__token {
 
+		@include mobile {
+			display: none;
+		}
+
 		&__frame {
 			display: flex;
 			justify-content: flex-start;
@@ -252,8 +313,21 @@
 		font-size: 16px;
 		line-height: 1;
 		color: $color-black;
+
+		@include mobile-s {
+			height: 60px;
+			font-size: 14px;
+		}
+
 		span {
 			margin-right: 84px;
+
+			&:first-child {
+				@include mobile-s {
+					display: none;
+				}
+			}
+
 			&:last-child {
 				margin-right: 0;
 			}
@@ -265,5 +339,9 @@
 		font-size: 24px;
 		line-height: 1;
 		color: $color-black;
+
+		@include mobile-s {
+			font-size: 20px;
+		}
 	}
 }

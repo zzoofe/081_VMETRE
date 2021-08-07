@@ -1,22 +1,75 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 
 const init = () => {
 	const reviews = new Swiper(".js-reviews", {
 		slidesPerView: 1,
 		spaceBetween: 12,
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
+		loop: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 		},
 		breakpoints: {
-			640: {
+			550: {
 				slidesPerView: 2,
 			},
 			768: {
+				slidesPerView: 2,
+			},
+			992: {
 				slidesPerView: 3,
 			},
-			1024: {
+		},
+	})
+
+	const projects = new Swiper(".js-projects", {
+		spaceBetween: 16,
+		loop: true,
+		slidesPerView: "auto",
+		centeredSlides: true,
+		breakpoints: {
+			10: {
+				slidesPerView: 1,
+				centeredSlides: false,
+			},
+			550: {
+				slidesPerView: 2,
+				centeredSlides: false,
+			},
+			768: {
+				slidesPerView: 2,
+				centeredSlides: false,
+			},
+			992: {
 				slidesPerView: 3,
+				spaceBetween: 12,
+			},
+			1199: {
+				slidesPerView: "auto",
+			},
+		},
+	})
+
+	const specialists = new Swiper(".js-specialists", {
+		slidesPerView: 2,
+		spaceBetween:  20,
+		slidesPerColumn: 2,
+		breakpoints: {
+			550: {
+				slidesPerView: 3,
+				slidesPerColumn: 2,
+			},
+			767: {
+				slidesPerView: 4,
+				slidesPerColumn: 2,
+			},
+			991: {
+				slidesPerView: 5,
+				slidesPerColumn: 2,
+			},
+			1200: {
+				slidesPerView: 5,
+				slidesPerColumn: 2,
 			},
 		},
 	})

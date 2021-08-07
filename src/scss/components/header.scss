@@ -8,14 +8,46 @@
 		height: 100px;
 		display: flex;
 		align-items: center;
+
+		@include desktop-x {
+			padding: 0 20px;
+		}
+
+		@include laptop {
+			height: 64px;
+		}
 	}
 
 	&__logo {
 		margin-bottom: 12px;
 
+		@include laptop {
+			margin-bottom: 0;
+			flex-grow: 1;
+			display: flex;
+			justify-content: flex-start;
+		}
+
 		a {
 			display: flex;
 		}
+
+		.for-desktop {
+			@include laptop {
+				display: none;
+			}
+		}
+
+		.for-laptop {
+			display: none;
+			width: 64px;
+			height: 64px;
+
+			@include laptop {
+				display: block;
+			}
+		}
+
 	}
 
 	&__search {
@@ -23,6 +55,14 @@
 		display: flex;
 		justify-content: center;
 		padding-right: 16px;
+
+		@include desktop {
+			padding: 0 30px;
+		}
+
+		@include laptop {
+			display: none;
+		}
 
 		form {
 			position: relative;
@@ -34,14 +74,18 @@
 			width: 320px;
 			background: #F8F8F8;
 			border-radius: 24px;
-			padding: 0 20px 0 62px;
+			padding: 10px 20px 10px 62px;
 			border: 0;
 			color: $color-gray;
 			font-family: $font-default;
-			font-weight: normal;
+			font-weight: 400;
 			font-size: 14px;
-			line-height: 1;
+			line-height: 24px;
 			outline: none;
+
+			@include desktop {
+				width: 100%;
+			}
 
 			@include placeholder {
 				color: $color-gray;
@@ -72,6 +116,14 @@
 		position: relative;
 		cursor: pointer;
 
+		@include desktop-x {
+			margin-right: 30px;
+		}
+
+		@include laptop {
+			display: none;
+		}
+
 		&:after {
 			content: '';
 			left: -1px;
@@ -93,6 +145,14 @@
 	&__nav {
 		margin-right: 64px;
 
+		@include desktop-x {
+			margin-right: 30px;
+		}
+
+		@include laptop {
+			display: none;
+		}
+
 		&__list {
 			display: flex;
 			align-items: center;
@@ -103,6 +163,10 @@
 			font-size: 14px;
 			line-height: 1;
 			margin-left: 61px;
+
+			@include desktop-x {
+				margin-left: 30px;
+			}
 
 			&:first-child {
 				margin-left: 0;
@@ -119,7 +183,90 @@
 					fill: $color-black;
 					margin-left: 7px;
 				}
+
+				&:hover {
+					color: $color-red;
+				}
 			}
 		}
+	}
+
+	&__login {
+		@include laptop {
+			display: none;
+		}
+	}
+
+	&__burger {
+		position: relative;
+		margin: 0;
+		transform: rotate(0deg);
+		transition: all 0.5s ease-in-out 0s;
+		cursor: pointer;
+		display: none;
+		padding: 7px;
+		min-width: 30px;
+		width: 30px;
+		height: 30px;
+
+		svg {
+			width: 16px;
+			height: 16px;
+			display: block;
+		}
+
+		@include laptop {
+			display: block;
+		}
+
+		//span {
+		//	display: block;
+		//	position: absolute;
+		//	height: 3px;
+		//	width: 100%;
+		//	background: rgb(40, 55, 141);
+		//	border-radius: 3px;
+		//	opacity: 1;
+		//	left: 0;
+		//	transform: rotate(0deg);
+		//	transition: all 0.25s ease-in-out 0s;
+		//
+		//	&:nth-child(1) {
+		//		top: 0;
+		//	}
+		//
+		//	&:nth-child(2),
+		//	&:nth-child(3) {
+		//		top: 15px;
+		//	}
+		//
+		//	&:nth-child(4) {
+		//		top: 30px;
+		//	}
+		//}
+		//
+		//&.open {
+		//	span {
+		//		&:nth-child(1) {
+		//			top: 15px;
+		//			width: 0;
+		//			left: 50%;
+		//		}
+		//
+		//		&:nth-child(2) {
+		//			transform: rotate(45deg);
+		//		}
+		//
+		//		&:nth-child(3) {
+		//			transform: rotate(-45deg);
+		//		}
+		//
+		//		&:nth-child(4) {
+		//			top: 15px;
+		//			width: 0;
+		//			left: 50%;
+		//		}
+		//	}
+		//}
 	}
 }

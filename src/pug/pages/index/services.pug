@@ -10,7 +10,4 @@ section.b-section.b-services
 						span.b-services__item__title: != item.name
 						span.b-services__item__info: != item.desc
 						span.b-services__item__image
-							+lazyPicture({
-								src: item.image,
-								alt: ''
-							})
+							img(src=item.image alt="")

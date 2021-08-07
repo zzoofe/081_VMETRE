@@ -4,8 +4,12 @@
 		background-size: cover;
 		padding-right: 30px;
 
-		.container {
+		@include desktop {
+			padding-right: 0;
+		}
 
+		@include mobile {
+			background: $color-gray3;
 		}
 
 		&__frame {
@@ -13,15 +17,27 @@
 			height: 385px;
 			flex-direction: column;
 			justify-content: center;
+
+			@include mobile {
+				height: auto;
+				padding-top: 16px;
+				padding-bottom: 36px;
+			}
 		}
 
 		&__title {
 			margin: 0 0 12px 0;
-			padding: 4px 0 0 27px;
+			padding: 4px 0 0 29px;
 			font-weight: 700;
 			font-size: 36px;
 			line-height: 1;
 			font-family: $font-default;
+
+			@include mobile {
+				padding: 0;
+				font-size: 24px;
+				margin-bottom: 16px;
+			}
 		}
 
 		&__options {
@@ -29,24 +45,160 @@
 			height: 58px;
 			border-radius: 16px;
 			margin-bottom: 20px;
+			display: grid;
+			grid-template-columns: 197px 209px 209px 1fr;
+
+			@include laptop {
+				height: auto;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-areas:
+					'opt1 opt2 opt3'
+					'opt4 opt4 opt4';
+			}
+
+			@include mobile {
+				padding-top: 8px;
+				grid-template-columns: 1fr;
+				grid-template-areas:
+					'opt1'
+					'opt2'
+					'opt3'
+					'opt4';
+			}
 		}
 
 		&__option {
-			display: none;
+			background: url(../images/bord.svg) no-repeat 0 0;
+
+			@include mobile {
+				background: url(../images/sep.png) repeat-x 0 0;
+			}
+
+			&:first-child {
+				background: none;
+			}
+
+			@include laptop {
+				&:nth-child(1) {
+					grid-area: opt1;
+				}
+				&:nth-child(2) {
+					grid-area: opt2;
+				}
+				&:nth-child(3) {
+					grid-area: opt3;
+				}
+				&:nth-child(4) {
+					grid-area: opt4;
+					background: url(../images/sep.png) repeat-x 0 0;
+				}
+			}
+		}
+
+		&__select {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 1;
+			color: $color-black1;
+			position: relative;
+			height: 58px;
+			display: flex;
+			align-items: center;
+			padding: 0 0 0 32px;
+			cursor: pointer;
+			background: rgba(255, 84, 0, 0);
+			transition: $duration-normal;
+
+			&:hover {
+				background: rgba(255, 84, 0, 0.1);
+
+				@include mobile {
+					background: rgba(255, 84, 0, 0);
+				}
+			}
+
+			@include mobile {
+				height: 45px;
+				padding: 0 24px;
+			}
+
+			span {
+
+			}
+
+			svg {
+				position: absolute;
+				right: 32px;
+				top: 50%;
+				width: 10px;
+				height: 8px;
+				fill: $color-white1;
+				margin-top: -4px;
+
+				@include mobile {
+					right: 24px;
+				}
+			}
+		}
+
+		&__input {
+			border: 0;
+			outline: none;
+			display: block;
+			width: 100%;
+			height: 58px;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 24px;
+			color: $color-gray2;
+			background: none;
+			padding: 17px 32px;
+
+			@include mobile {
+				height: 45px;
+				padding: 0 24px;
+			}
+
+			@include placeholder {
+				color: $color-gray2;
+			}
 		}
 
 		&__btn {
 			display: flex;
 			justify-content: flex-end;
 
+			@include mobile {
+				justify-content: center;
+			}
+
+			@include mobile-s {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-column-gap: 13px;
+			}
+
 			.btn {
 				margin-left: 16px;
+
+				@include mobile-s {
+					margin-left: 0;
+					min-width: auto;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
 			}
 		}
 	}
 
 	&-section {
 		padding: 42px 0 44px 0;
+
+		@include mobile {
+			padding: 36px 0;
+		}
 	}
 
 	&-title {
@@ -55,6 +207,10 @@
 		align-items: flex-end;
 		margin-bottom: 44px;
 
+		@include mobile {
+			margin-bottom: 16px;
+		}
+
 		h2 {
 			margin: 0;
 			padding-bottom: 4px;
@@ -62,6 +218,15 @@
 			font-size: 32px;
 			line-height: 1;
 			color: $color-black1;
+
+			@include laptop {
+				font-size: 28px;
+				padding-bottom: 0;
+			}
+
+			@include mobile {
+				font-size: 18px;
+			}
 		}
 
 		&__all {
@@ -69,6 +234,14 @@
 			font-size: 16px;
 			line-height: 1;
 			color: $color-gray;
+
+			@include laptop {
+				font-size: 14px;
+			}
+
+			@include mobile {
+				font-size: 12px;
+			}
 
 			&:hover {
 				color: $color-black;
@@ -81,16 +254,33 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-column-gap: 35px;
+
+			@include laptop {
+				grid-column-gap: 16px;
+			}
+
+			@include mobile {
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 7px;
+			}
 		}
 
 		&__item {
-			background: $color-gray3;
 			border-radius: 8px;
 			overflow: hidden;
 
 			&__link {
 				display: block;
 				padding: 20px 0 0 0;
+				background: $color-gray3;
+
+				&:hover {
+					background: #eee;
+				}
+
+				@include mobile {
+					padding-top: 12px;
+				}
 			}
 
 			&__title {
@@ -102,6 +292,12 @@
 				line-height: 1;
 				color: $color-black1;
 				margin-bottom: 6px;
+
+				@include mobile {
+					font-size: 14px;
+					margin-bottom: 4px;
+					padding: 0 15px;
+				}
 			}
 
 			&__info {
@@ -112,12 +308,27 @@
 				font-size: 12px;
 				line-height: 1;
 				color: $color-gray2;
+
+				@include mobile {
+					padding: 0 15px;
+					margin-bottom: 13px;
+				}
 			}
 
 			&__image {
 				display: flex;
 				border-radius: 8px;
 				overflow: hidden;
+
+				picture {
+					display: block;
+					width: 100%;
+				}
+
+				img {
+					min-width: 100%;
+					transition: $duration-normal;
+				}
 			}
 		}
 	}
@@ -127,12 +338,31 @@
 
 		&__list {
 			margin-top: -2px;
+			position: relative;
 		}
 
 		&__item {
 			background: $color-white;
-			border-radius: 0px 32px 32px 32px;
+			border-radius: 0 32px 32px 32px;
 			padding-bottom: 34px;
+			transition: $duration-normal;
+
+			&:hover {
+				background: rgba(255, 84, 0, 1);
+
+				.b-reviews__item__head__spec,
+				.b-reviews__item__head__name,
+				.b-reviews__item__head__name a,
+				.b-reviews__item__title,
+				.b-reviews__item__text,
+				.b-reviews__item__price {
+					color: $color-white;
+				}
+
+				.b-reviews__item__head__reit {
+					background: $color-black1;
+				}
+			}
 
 			&__head {
 				position: relative;
@@ -144,6 +374,7 @@
 					line-height: 1;
 					color: $color-black1;
 					padding: 14px 0 5px 0;
+					transition: $duration-normal;
 				}
 
 				&__name {
@@ -151,6 +382,7 @@
 					font-size: 12px;
 					line-height: 1;
 					color: $color-black;
+					transition: $duration-normal;
 
 					a {
 						color: $color-black;
@@ -173,6 +405,7 @@
 					background: $color-gray1;
 					border-radius: 0px 32px;
 					padding-bottom: 4px;
+					transition: $duration-normal;
 
 					svg {
 						width: 15px;
@@ -215,6 +448,7 @@
 				font-size: 14px;
 				line-height: 13px;
 				color: $color-black1;
+				transition: $duration-normal;
 			}
 
 			&__text {
@@ -224,6 +458,7 @@
 				color: $color-gray2;
 				flex-grow: 1;
 				max-width: 194px;
+				transition: $duration-normal;
 
 			}
 
@@ -232,13 +467,214 @@
 				font-size: 14px;
 				line-height: 1;
 				color: $color-black1;
+				transition: $duration-normal;
 			}
+		}
+
+		.swiper-container {
+
+			@include mobile-s {
+				margin-right: -16px;
+				padding-right: 47px;
+			}
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			background: rgba(220, 234, 237, 1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: -22px;
+			transition: $duration-normal;
+			outline: none;
+			border: 0;
+
+			&:after {
+				display: none;
+			}
+
+			svg {
+				width: 10px;
+				height: 16px;
+				fill: #85A5AD;
+			}
+
+			&:hover {
+				background: #d3e0e3;
+			}
+		}
+
+		.swiper-button-next {
+			right: -90px;
+		}
+
+		.swiper-button-prev {
+			left: -90px;
 		}
 	}
 
 	&-projects {
 		&__frame {
-			min-height: 272px;
+			margin-top: -3px;
+
+			.container {
+				max-width: none;
+				padding: 0;
+
+				@include desktop {
+					padding: 0 20px;
+					max-width: 1146px;
+				}
+
+				@include mobile {
+					padding: 0 16px;
+				}
+			}
+
+			.swiper-container {
+				margin-bottom: 16px;
+
+				@include laptop {
+					margin-bottom: 0;
+				}
+
+				@include mobile-s {
+					margin-left: -0;
+					margin-right: -16px;
+					padding-right: 47px;
+				}
+
+				&:nth-child(2) {
+					margin-bottom: 0;
+					margin-left: -200px;
+
+					@include desktop {
+						margin-left: 0;
+					}
+
+					@include laptop {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__item {
+
+			&__link {
+				border: 1px solid $color-white1;
+				border-radius: 8px;
+				padding: 16px;
+				display: block;
+
+				&:hover {
+					border: 1px solid $color-gray;
+				}
+			}
+
+			&__row {
+				display: flex;
+			}
+
+			&__desc {
+				flex-grow: 1;
+			}
+
+			&__title {
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 15px;
+				color: #20161F;
+				margin-bottom: 7px;
+				display: block;
+				min-height: 30px;
+			}
+
+			&__text {
+				display: block;
+				font-weight: 500;
+				font-size: 12px;
+				line-height: 11px;
+				color: #777777;
+
+				@include laptop {
+					min-height: 33px;
+				}
+			}
+
+			&__desc {
+
+			}
+
+			&__price {
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 15px;
+				color: #20161F;
+				text-align: right;
+				padding-top: 13px;
+				display: block;
+			}
+
+			&__info {
+				display: flex;
+				flex-direction: column;
+				padding-left: 10px;
+
+				span {
+					min-width: 101px;
+					display: flex;
+					align-items: center;
+					text-align: center;
+					justify-content: center;
+					border-radius: 4px;
+					height: 22px;
+					font-weight: 500;
+					font-size: 12px;
+					line-height: 11px;
+					text-transform: uppercase;
+					margin-bottom: 14px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&.bg {
+						&-red {
+							background: #FFBD9C;
+							color: #FF5400;
+						}
+
+						&-yel {
+							background: #FFF5BE;
+							color: #FFD600;
+						}
+
+						&-blue {
+							background: #C5F3FF;
+							color: #00CCFF;
+						}
+
+						&-pink {
+							background: #FFE7FD;
+							color: #C600B2;
+						}
+					}
+				}
+
+			}
+		}
+
+		.swiper-slide {
+			width: 357px;
+
+			@include desktop {
+				width: auto;
+			}
 		}
 	}
 
@@ -246,34 +682,79 @@
 		background: $color-gray3;
 
 		&__frame {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			grid-row-gap: 38px;
-			margin: -6px -46px 0 -34px;
+			margin: -6px -46px -30px -34px;
+
+			@include desktop {
+				margin: 0 -20px;
+			}
+
+			@include mobile {
+				padding-top: 10px;
+			}
+
+			@include mobile-s {
+				margin: 0;
+			}
+
 		}
 
 		&__item {
 			display: flex;
 			justify-content: center;
 
+			@include laptop {
+				&:nth-child(9),
+				&:nth-child(10) {
+					display: none;
+				}
+			}
+
+			@include mobile {
+				&:nth-child(7),
+				&:nth-child(8) {
+					display: none;
+				}
+			}
+
+			@include mobile-s {
+				&:nth-child(5),
+				&:nth-child(6) {
+					display: none;
+				}
+			}
+
 			&__link {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				text-align: center;
+
+				&:hover {
+					.b-specialists__item__image {
+						img {
+							opacity: 0.8;
+						}
+					}
+				}
 			}
 
 			&__spec {
-				font-weight: bold;
+				font-weight: 700;
 				font-size: 16px;
-				line-height: 15px;
+				line-height: 1;
 				color: $color-black0;
+				margin-bottom: 8px;
+
+				@include laptop {
+					font-size: 14px;
+				}
 			}
 
 			&__image {
 				img {
 					width: 150px;
 					height: 150px;
+					transition: $duration-normal;
 				}
 			}
 
@@ -293,6 +774,7 @@
 				align-items: center;
 				padding: 0 8px;
 				margin-bottom: 8px;
+				position: relative;
 			}
 
 			&__reit {
@@ -335,6 +817,271 @@
 					margin-left: 5px;
 				}
 			}
+		}
+
+
+		.swiper-slide {
+			height: calc((100% - 30px) / 2);
+		}
+
+		.swiper-wrapper {
+			height: 500px;
+		}
+	}
+
+	&-content {
+		border-top: 2px solid #E5E5E5;
+		padding: 26px 20px 31px 20px;
+
+		@include mobile {
+			padding: 8px 16px 30px 16px;
+		}
+
+		.container {
+			max-width: 1154px;
+			background: #FFFFFF;
+			border-radius: 8px;
+			padding: 30px 32px;
+
+			@include mobile {
+				padding: 10px 12px;
+			}
+		}
+	}
+
+	&-service {
+		padding-bottom: 20px;
+
+		@include mobile {
+			padding-bottom: 12px;
+		}
+
+		&__title {
+			padding-bottom: 32px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@include mobile {
+				padding-bottom: 12px;
+			}
+
+			h1 {
+				margin: 0;
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 1;
+				padding-right: 20px;
+
+				@include mobile {
+					font-size: 14px;
+				}
+			}
+		}
+
+		&__desc {
+			padding-top: 22px;
+			font-size: 16px;
+			line-height: 1;
+			max-width: 767px;
+
+			@include mobile {
+				padding-top: 12px;
+				font-size: 14px;
+			}
+
+			h4 {
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 1;
+				margin: 0 0 12px 0;
+
+				@include mobile {
+					font-size: 16px;
+				}
+			}
+
+			p {
+				margin-bottom: 12px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__price {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 1;
+			text-align: right;
+
+			@include mobile {
+				font-size: 14px;
+			}
+		}
+
+		&__cols {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			align-items: flex-end;
+			grid-column-gap: 30px;
+
+			@include mobile {
+				grid-template-columns: 1fr;
+				grid-row-gap: 12px;
+			}
+		}
+	}
+
+	&-sep {
+		position: relative;
+
+		&:after {
+			content: '';
+			background: #E5E5E5;
+			height: 1px;
+			position: absolute;
+			left: -32px;
+			right: -32px;
+			bottom: 0;
+
+			@include mobile {
+				left: -12px;
+				right: -12px;
+			}
+		}
+	}
+
+	&-project {
+
+		&__item {
+			margin-bottom: 20px;
+
+			&__link {
+				background: #FFFFFF;
+				border: 1px solid #E5E5E5;
+				border-radius: 8px;
+				min-height: 220px;
+				padding: 23px 24px;
+				display: grid;
+				grid-template-columns: 158px 1fr;
+				grid-column-gap: 12px;
+				position: relative;
+
+				&:hover {
+					border: 1px solid #777777;
+				}
+			}
+
+			&__image {
+
+				img {
+					display: block;
+					border-radius: 8px;
+				}
+			}
+
+			&__title {
+				display: flex;
+				margin-top: -2px;
+				margin-bottom: 18px;
+
+				h4 {
+					margin: 0 18px 0 0;
+					font-weight: 700;
+					font-size: 16px;
+					line-height: 15px;
+				}
+			}
+
+			&__desc {
+				display: flex;
+				flex-direction: column;
+			}
+
+			&__text {
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 13px;
+				color: #000000;
+				max-width: 400px;
+				flex-grow: 1;
+
+				p {
+					margin-bottom: 12px;
+				}
+			}
+
+			&__info {
+				display: flex;
+			}
+
+			&__sity {
+				display: flex;
+				align-items: center;
+				font-size: 16px;
+				line-height: 15px;
+				color: #C4C4C4;
+				margin-right: 31px;
+
+				svg {
+					width: 12px;
+					height: 12px;
+					fill: #C4C4C4;
+					margin-left: 10px;
+				}
+			}
+
+			&__type {
+				display: flex;
+				align-items: center;
+				font-weight: 500;
+				font-size: 12px;
+				line-height: 11px;
+				color: #000000;
+
+				svg {
+					width: 14px;
+					height: 18px;
+					fill: #FF5400;
+					margin-right: 6px;
+				}
+			}
+
+			&__btns {
+				position: absolute;
+				right: 24px;
+				top: 24px;
+				display: flex;
+				flex-direction: column;
+				.btn_info {
+					margin-bottom: 8px;
+				}
+			}
+
+			&__price {
+				text-align: right;
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 13px;
+				color: #000000;
+
+				p {
+					margin: 0 0 12px 0;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				strong {
+					font-weight: 700;
+					font-size: 16px;
+					line-height: 15px;
+					color: #20161F;
+				}
+			}
+
 		}
 	}
 }

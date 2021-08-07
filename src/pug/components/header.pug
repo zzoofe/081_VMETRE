@@ -2,7 +2,8 @@ header.header
 	.container
 		.header__logo
 			a(href="/")
-				img(src="images/logo.png" srcset="images/logo@2x.png 2x" alt="")
+				img(src="images/logo.png" srcset="images/logo@2x.png 2x" alt="").for-desktop
+				img(src="images/logo-m.png" srcset="images/logo-m@2x.png 2x" alt="").for-laptop
 		.header__search
 			form(action="#")
 				input(type="text" placeholder="Поиск").header__search__input
@@ -21,3 +22,5 @@ header.header
 		.header__sity Москва
 		.header__login
 			a.btn.btn_grey(href="#") Войти
+		.header__burger
+			+svg('burger')

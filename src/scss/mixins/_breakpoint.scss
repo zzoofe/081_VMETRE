@@ -1,31 +1,17 @@
+@mixin desktop-x {
+	@media (max-width: (($desktop-x - 1) * 1px)) {
+		@content;
+	}
+}
+
 @mixin desktop {
-	@media (min-width: ($desktop * 1px)) {
+	@media (max-width: (($desktop - 1) * 1px)) {
 		@content;
 	}
 }
 
 @mixin laptop {
-	// change the values for the situation
-	@media (min-width: ($desktop * 1px)) and (max-width: (($laptop - 1) * 1px)) {
-		@content;
-	}
-}
-
-@mixin desktop-xl {
-	// change the values for the situation
-	@media (min-width: ($desktop-xl * 1px)) {
-		@content;
-	}
-}
-
-@mixin laptop-h {
-	@media (min-width: ($desktop * 1px)) and (max-height: (($desktop-vh - 1) * 1px)) {
-		@content;
-	}
-}
-
-@mixin tablet {
-	@media (min-width: ($tablet * 1px)) and (max-width: (($desktop - 1) * 1px)) {
+	@media (max-width: (($laptop - 1) * 1px)) {
 		@content;
 	}
 }
@@ -36,8 +22,8 @@
 	}
 }
 
-@mixin devices {
-	@media (max-width: (($desktop - 1) * 1px)) {
+@mixin mobile-s {
+	@media (max-width: (($mobile - 1) * 1px)) {
 		@content;
 	}
 }

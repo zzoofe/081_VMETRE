@@ -8,43 +8,37 @@
 	opacity: 0;
 }
 
-.for-desktop {
-	@include devices {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-}
-
-.for-tablet {
-	@include desktop {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-
-	@include mobile {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-}
-
-.for-mobile {
-	@include desktop {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-
-	@include tablet {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-}
-
-.for-devices {
-	@include desktop {
-		// stylelint-disable-next-line declaration-no-important
-		display: none !important;
-	}
-}
+//.for-desktop {
+//	@include devices {
+//		display: none !important;
+//	}
+//}
+//
+//.for-tablet {
+//	@include desktop {
+//		display: none !important;
+//	}
+//
+//	@include mobile {
+//		display: none !important;
+//	}
+//}
+//
+//.for-mobile {
+//	@include desktop {
+//		display: none !important;
+//	}
+//
+//	@include tablet {
+//		display: none !important;
+//	}
+//}
+//
+//.for-devices {
+//	@include desktop {
+//		display: none !important;
+//	}
+//}
 
 .clearfix {
 	overflow: auto;

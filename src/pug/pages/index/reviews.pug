@@ -2,27 +2,32 @@ section.b-section.b-reviews
 	.container
 		.b-title
 			h2 Последние отзывы
-		.b-reviews__list.js-reviews.swiper-container
-			.swiper-wrapper
-				each item, key in data.reviews
-					.b-reviews__item.swiper-slide
-						.b-reviews__item__head
-							.b-reviews__item__head__spec: != item.spec
-							.b-reviews__item__head__name
-								| Специалист:
-								| !{' '}
-								a(href="#"): != item.name
-							.b-reviews__item__head__reit
-								+svg('star')
-								span: != item.reit
-						.b-reviews__item__row
-							.b-reviews__item__image
-								+lazyPicture({
-									src: item.image,
-									alt: ''
-								})
-							.b-reviews__item__desc
-								h4.b-reviews__item__title: != item.title
-								.b-reviews__item__text: != item.desc
-								.b-reviews__item__price: != item.price
-				.swiper-pagination
+			a(href="#").b-title__all Смотреть все
+		.b-reviews__list
+			.js-reviews.swiper-container
+				.swiper-wrapper
+					each item, key in data.reviews
+						.b-reviews__item.swiper-slide
+							.b-reviews__item__head
+								.b-reviews__item__head__spec: != item.spec
+								.b-reviews__item__head__name
+									| Специалист:
+									| !{' '}
+									a(href="#"): != item.name
+								.b-reviews__item__head__reit
+									+svg('star')
+									span: != item.reit
+							.b-reviews__item__row
+								.b-reviews__item__image
+									img(
+										src=item.image
+										alt=""
+									)
+								.b-reviews__item__desc
+									h4.b-reviews__item__title: != item.title
+									.b-reviews__item__text: != item.desc
+									.b-reviews__item__price: != item.price
+			.swiper-button-next
+				+svg('arw-next')
+			.swiper-button-prev
+				+svg('arw-prev')
