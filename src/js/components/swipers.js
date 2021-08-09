@@ -73,6 +73,34 @@ const init = () => {
 			},
 		},
 	})
+
+	const spec = new Swiper(".js-spec", {
+		slidesPerView: 21,
+		spaceBetween:  10,
+		slidesPerColumn: 2,
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+				slidesPerColumn: 2,
+			},
+			660: {
+				slidesPerView: 2,
+				slidesPerColumn: 2,
+			},
+			767: {
+				slidesPerView: 2,
+				slidesPerColumn: 2,
+			},
+			991: {
+				slidesPerView: 3,
+				slidesPerColumn: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+				slidesPerColumn: 2,
+			},
+		},
+	})
 }
 
 export default {
