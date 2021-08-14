@@ -1,0 +1,57 @@
+.b-filter
+	form(action="#").b-filter__frame
+		.b-filter__field
+			.b-filter__field__item
+				.b-filter__search
+					input(type="text" placeholder="Введите текст для поиска услуги").inp
+			.b-filter__field__item
+				.b-filter__quantity
+					.b-filter__quantity__item
+						.b-filter__group
+							.b-filter__group__title Кол-во отзывов
+							.b-filter__group__quantity
+								label От
+								input(type="text").inp
+								span.quality-btn
+									+svg('qua-top')
+									+svg('qua-bot')
+					.b-filter__quantity__item
+						.b-filter__group
+							.b-filter__group__title Кол-во СБР
+							.b-filter__group__quantity
+								label От
+								input(type="text").inp
+								span.quality-btn
+									+svg('qua-top')
+									+svg('qua-bot')
+			.b-filter__field__item
+				.b-filter__group
+					.b-filter__group__title Услуги
+					.b-filter__group__select
+						.b-filter__group__select__value
+							| Выбрать
+							+svg('qua-bot')
+			.b-filter__field__item
+				.b-filter__group
+					.b-filter__group__title Местонахождение
+					.b-filter__group__input
+						input(type="text" placeholder="Введите название").inp
+			.b-filter__field__item
+				.b-filter__group
+					.b-filter__group__check
+						input(type="checkbox" id="ch1")
+						label(for="ch1") Личность подтверждена
+			.b-filter__field__item
+				.b-filter__group
+					.b-filter__group__title Пользуется сервисом
+					.b-filter__group__select
+						.b-filter__group__select__value
+							| Выбрать
+							+svg('qua-bot')
+			.b-filter__btn
+				+svg('filter')
+		.b-filter__button
+			button.btn.btn_red Искать
+			button.btn.btn_black
+				| На карте
+				+svg('map').btn_icon-map

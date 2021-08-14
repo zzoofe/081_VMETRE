@@ -1,0 +1,24 @@
+.b-acceptForm
+	h4 Принять работу
+	.b-acceptForm__form
+		.b-acceptForm__desc
+			textarea(placeholder="Комментарий")
+		.b-acceptForm__info
+			.b-acceptForm__info__reit
+				p Оценка
+				ul
+					li.is-active: +svg('star')
+					li.is-active: +svg('star')
+					li.is-active: +svg('star')
+					li.is-active: +svg('star')
+					li: +svg('star')
+			.b-acceptForm__info__file
+				p Добавить фото
+				input(type="file" id="file")
+				label(for="file")
+					+svg('foto')
+					| Файл
+		.b-acceptForm__button
+			button.btn.btn_red Принять
+			a(href="#") В арбитраж
+

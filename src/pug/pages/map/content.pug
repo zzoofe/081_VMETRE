@@ -1,0 +1,49 @@
+section.b-content.b-content_large.b-content_bgNone.b-content_map
+	.b-mapBar
+		.b-mapBar__btns
+			button.is-active Карта
+			button Список
+		.b-mapBar__filter.js-openFilter
+			| Фильтры
+			+svg('filter')
+	.container
+		include filter
+	include filterModal
+	#map.b-map
+	.b-mapSpecialist
+		h2 Список исполнителей
+		.b-mapSpecialist__sort
+			.el-sort
+				span Дата
+				a(href="#"): +svg('sort')
+		each item, key in data.specialists
+			.b-spec__item
+				a(href="#").b-spec__item__link
+					span.b-spec__item__head
+						span.b-spec__item__image
+							img(
+								src=item.image
+								slt=""
+							)
+						span.b-spec__item__desc
+							span.b-spec__item__name: != item.name
+							span.b-spec__item__sity
+								!= item.sity
+								+svg('map')
+							span.b-spec__item__info
+								span.b-spec__item__reit
+									+svg('star')
+									!= item.reit
+								span.b-spec__item__price: != item.price
+							span.b-spec__item__spec: != item.spec
+					span.b-spec__item__price-title Цены
+					span.b-spec__item__price-row
+						span.b-spec__item__price-label: span Женская стрижка
+						span.b-spec__item__price-value 1050 рублей
+					span.b-spec__item__price-row
+						span.b-spec__item__price-label: span Женская причёска
+						span.b-spec__item__price-value 1050 рублей
+					span.b-spec__item__price-row
+						span.b-spec__item__price-label: span Мужская стрижка
+						span.b-spec__item__price-value 1050 рублей
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")

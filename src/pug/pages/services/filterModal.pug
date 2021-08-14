@@ -1,0 +1,56 @@
+.b-filterModal
+	.b-filterModal__frame
+		.b-filterModal__head
+			.b-filterModal__head__back
+				+svg('arw-left')
+			.b-filterModal__head__logo
+				a(href="#"): img(src="./images/logo1.png" alt="")
+			.b-filterModal__head__clear Очистить
+		form(action="#").b-filterModal__from
+			.b-filter__search
+				input(type="text" placeholder="Введите текст для поиска услуги").inp
+
+			.b-filterModal__group
+				.b-filterModal__group__title Местонахождение
+				.b-filterModal__group__input
+					input(type="text" placeholder="Введите название").inp
+
+			.b-filterModal__group
+				.b-filterModal__group__title Кол-во отзывов
+				.b-filter__group__quantity
+					label От
+					input(type="text").inp
+					span.quality-btn
+						+svg('qua-top')
+						+svg('qua-bot')
+
+			.b-filterModal__group
+				.b-filterModal__group__title Кол-во СБР
+				.b-filter__group__quantity
+					label От
+					input(type="text").inp
+					span.quality-btn
+						+svg('qua-top')
+						+svg('qua-bot')
+
+			.b-filterModal__group
+				.b-filterModal__group__title Услуги
+				.b-filterModal__select
+					.b-filter__group__select__value
+						| Выбрать
+						+svg('qua-bot')
+
+			.b-filterModal__group
+				.b-filter__group__check
+					input(type="checkbox" id="ch1")
+					label(for="ch1") Личность подтверждена
+
+			.b-filterModal__group
+				.b-filterModal__group__title Пользуется сервисом
+				.b-filterModal__select
+					.b-filter__group__select__value
+						| Выбрать
+						+svg('qua-bot')
+			.b-filterModal__button
+				button.btn.btn_red Показать
+				button.btn.btn_gray Сохранить поиск

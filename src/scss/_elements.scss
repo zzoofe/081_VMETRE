@@ -1,0 +1,131 @@
+.el {
+	&-sort {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 13px;
+		color: #20161F;
+
+		@include mobile {
+			font-size: 12px;
+			line-height: 1;
+		}
+
+		a {
+			display: flex;
+			margin-left: 8px;
+		}
+
+		svg {
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	&-sity {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 15px;
+		color: #C4C4C4;
+		display: flex;
+		align-items: center;
+
+		@include mobile {
+			font-size: 12px;
+			line-height: 11px;
+		}
+
+		svg {
+			width: 12px;
+			height: 12px;
+			margin-left: 10px;
+
+			@include mobile {
+				width: 9px;
+				height: 9px;
+				margin-left: 6px;
+			}
+		}
+	}
+
+	&-price {
+		position: relative;
+
+		&__title {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 17px;
+			margin: 0 0 15px 0;
+			color: #000000;
+
+			@include mobile {
+				font-size: 15px;
+				line-height: 1;
+			}
+		}
+
+		&__list {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			max-width: 292px;
+
+			@include mobile {
+				max-width: none;
+			}
+		}
+
+		&__item {
+			display: flex;
+			justify-content: space-between;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 13px;
+			color: #000000;
+			margin-bottom: 12px;
+			position: relative;
+			width: 100%;
+
+			&:before {
+				content: '';
+				left: 0;
+				right: 0;
+				bottom: 2px;
+				height: 1px;
+				position: absolute;
+				background: url(../images/sep.png) repeat-x center bottom;
+			}
+
+			span {
+				background: #FFFFFF;
+				position: relative;
+				z-index: 5;
+
+				&:nth-child(1) {
+
+				}
+
+				&:nth-child(2) {
+					font-weight: 700;
+				}
+			}
+		}
+
+		&__all {
+			font-size: 14px;
+			line-height: 13px;
+			font-weight: 500;
+			color: #777777;
+			cursor: pointer;
+
+			@include mobile {
+				position: absolute;
+				right: 0;
+				top: 0;
+				font-size: 12px;
+				line-height: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+extends pug/base
+
+prepend vars
+	- title = 'Vmetre'
+	- description = ''
+	- image = ''
+
+append vars
+	- link.icon32x32 = './images/favicon.png'
+
+block content
+	.app
+		include pug/components/header
+
+		include pug/pages/review/main
+
+		include pug/components/footer
