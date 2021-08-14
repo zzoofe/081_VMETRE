@@ -30,6 +30,12 @@
 
 		a {
 			display: flex;
+
+			img {
+				@include laptop {
+					height: 30px;
+				}
+			}
 		}
 
 		.for-desktop {
