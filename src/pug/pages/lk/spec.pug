@@ -1,0 +1,26 @@
+.b-spec
+	h2.title-h2 Избранное
+	.b-spec__frame
+		.swiper-container.js-spec
+			.swiper-wrapper
+				each item, key in data.specialists
+					.swiper-slide
+						.b-spec__item
+							a(href="#").b-spec__item__link
+								span.b-spec__item__head
+									span.b-spec__item__image
+										img(
+											src=item.image
+											slt=""
+										)
+									span.b-spec__item__desc
+										span.b-spec__item__name: != item.name
+										span.b-spec__item__sity
+											!= item.sity
+											+svg('map')
+										span.b-spec__item__info
+											span.b-spec__item__reit
+												+svg('star')
+												!= item.reit
+											span.b-spec__item__price: != item.price
+										span.b-spec__item__spec: != item.spec
