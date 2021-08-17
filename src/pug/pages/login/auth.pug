@@ -1,0 +1,15 @@
+.b-login__form.b-login__form--auth(data-form="auth")
+	.b-login__head
+		h2.b-login__head__title Авторизация
+		span.b-login__head__reg.js-show(data-id="reg") Регистрация
+	.b-login__field
+		.b-phoneCode
+			span +7
+			+svg('qua-bot')
+		input(type="text" value="952-345-45-32").inp.inp_gray.inp_phone
+	.b-login__field
+		input(type="text" placeholder="Пароль").inp.inp_gray
+	.b-login__field
+		button.btn.btn_red.btn_block Войти
+	.b-login__info
+		span.js-show(data-id="forgot") Забыли пароль?

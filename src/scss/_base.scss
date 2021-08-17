@@ -128,6 +128,10 @@ iframe {
 
 .app {
 	overflow: hidden;
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
@@ -156,5 +160,33 @@ iframe {
 			padding-top: 24px;
 			padding-bottom: 12px;
 		}
+	}
+}
+
+main {
+	position: relative;
+}
+
+.app {
+	&--auth {
+
+		.header {
+			display: none;
+
+			@include mobile {
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+}
+
+.app--map {
+	main {
+		margin-top: -100px;
+		padding-top: 100px;
 	}
 }

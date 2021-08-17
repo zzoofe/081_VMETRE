@@ -1,0 +1,45 @@
+.b-login__form.b-login__form--reg.is-hidden(data-form="reg")
+	.b-login__head
+		h2.b-login__head__title Регистрация
+	.b-login__stepStatus
+		span.is-active
+		span
+		span
+	.b-login__form__step.is-active
+		.b-login__field
+			.b-phoneCode
+				span +7
+				+svg('qua-bot')
+			input(type="text" value="952-345-45-32").inp.inp_gray.inp_phone
+		.b-login__field
+			input(type="text" placeholder="Email").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Пароль").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Повторите пароль").inp.inp_gray
+		.b-login__field
+			button.btn.btn_red.btn_block.js-step Далее
+		.b-login__info
+			span.js-show(data-id="auth") Уже есть аккаунт? Войдите.
+	.b-login__form__step
+		.b-login__field
+			input(type="text" placeholder="Имя").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Фамилия").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Дата рождения").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Город проживания").inp.inp_gray
+		.b-login__field
+			input(type="text" placeholder="Ремонт").inp.inp_gray
+		.b-login__field
+			button.btn.btn_red.btn_block.js-step(data-id="reg") Далее
+	.b-login__form__step
+		.b-login__mail
+			+svg('mail')
+			h4 Вам на почту отправлено письмо со ссылкой для восстановления доступа к аккаунту.
+			p
+				| Пожалуйста, перейдите по ней для
+				br
+				| продолжения использования сервиса.
+			button.btn.btn_red.btn_block Понятно

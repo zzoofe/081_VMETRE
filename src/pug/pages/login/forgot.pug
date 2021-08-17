@@ -1,0 +1,17 @@
+.b-login__form.b-login__form--forgot.is-hidden(data-form="forgot")
+	.b-login__form__step.is-active
+		.b-login__head
+			h2.b-login__head__title Восстановление доступа
+		.b-login__field
+			input(type="text" placeholder="Номер телефона или email").inp.inp_gray
+		.b-login__field
+			button.btn.btn_red.btn_block.js-step Отправить
+	.b-login__form__step
+		.b-login__mail
+			+svg('mail')
+			h4 Вам на почту отправлено письмо со ссылкой для восстановления доступа к аккаунту.
+			p
+				| Пожалуйста, перейдите по ней для
+				br
+				| продолжения использования сервиса.
+			button.btn.btn_red.btn_block Понятно
